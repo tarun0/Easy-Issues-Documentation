@@ -1,0 +1,1 @@
+py ./src/update_documentation.py

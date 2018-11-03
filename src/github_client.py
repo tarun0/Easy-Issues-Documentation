@@ -31,18 +31,32 @@ class Git:
       return 'open'
     elif self.are_all_pr_numbers_similiar(all_pr_numbers):
       pr_number = all_pr_numbers[0]
-      try:
-        pull_request = self.repo.get_pull(pr_number)
-        if pull_request.state == 'closed':
-          return 'closed'
-        else:
-          return 'in_progress'
-      except Exception as e:
-        print('--Error: couldn\'t get pull request with number: {}. Code:{}'.format(pr_number, e))
+      return self.get_pr_state(pr_number)
     else:
-      return 'multiple_prs'
-    
-    return 'error | pr number: {}'.format(pr_number)
+      return self.handle_multiple_prs(all_pr_numbers)
+
+  def handle_multiple_prs(self, all_pr_numbers):
+    state = 'open'
+    for pr_amount in range(len(all_pr_numbers)-1, -1, -1):
+      pr = all_pr_numbers[pr_amount]
+      state = self.get_pr_state(pr)
+      if state == 'closed':
+        return state
+
+    return 'multiple_prs'
+
+  def get_pr_state(self, pr_number):
+    try:
+      pull_request = self.repo.get_pull(pr_number)
+      if pull_request.is_merged():
+        return 'closed'
+      elif pull_request.state == 'closed':
+        return 'open'
+      else:
+        return 'in_progress'
+    except Exception as e:
+      print('--Error: couldn\'t get pull request with number: {}. Code:{}'.format(pr_number, e))
+      return 'error | pr_number: {}'.format(pr_number)
 
   def are_all_pr_numbers_similiar(self, pr_numbers):
     if len(pr_numbers) > 1:

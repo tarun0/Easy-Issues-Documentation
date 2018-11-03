@@ -1,8 +1,6 @@
 import sys
 import time
 
-animation_frames = "|/-\\"
-
 def print_itteration_status(msg, current, max):
   line = "[{}] {}/{}".format(msg, current, max)
   print_dynamic_line(line)

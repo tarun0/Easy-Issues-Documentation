@@ -1,8 +1,9 @@
-# Github issues documentation
+<a href="https://github.com/letelete/Easy-Issues-Documentation" alt="GitHub release"><img src="https://i.imgur.com/FiXRaDL.png" /></a>
+<h2 align="center"><b>Easy Issues Documentation</b></h2>
+<h4 align="center">Python script to create a documentation for issues status in repository.</h4>
+<h5>Made for specific task in Google Code-In, so Its functionality is strongly focused on this task. It will not be useful for anyone else probably.</h5>
 
-Python script to check issues status in repository. 
-
-Made for specific task in Google Code-In, so Its functionality is strongly focused on this task. It will not be useful for anyone else probably.
+<br><br>
 
 # How to use
 

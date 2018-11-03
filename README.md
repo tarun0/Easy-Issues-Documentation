@@ -1,11 +1,22 @@
 <a href="https://github.com/letelete/Easy-Issues-Documentation" alt="GitHub release"><img src="https://i.imgur.com/OQUy5Ly.png" /></a>
 <h2 align="center"><b>Easy Issues Documentation</b></h2>
 <h4 align="center">Python script to create a documentation for issues status in repository.</h4>
-<h5>Made for specific task in Google Code-In, so Its functionality is strongly focused on this task. It will not be useful for anyone else probably.</h5>
+<h5>Made for specific task in Google Code-In, so Its functionality is strongly focused on this task.</h5>
+
+
+### How does it works
+
+Script creates a repository documentation by checking if issues have any pull-request references.
+* if has, script checks if pr is already merged
+  * if merged - status: closed 
+  * else if pr is closed - status: open (because issue isn't resolved yet)
+  * else - status: in_progress
+* else if there are many unique references - status: multiple_prs
+* else - status: open
 
 <br><br>
 
-# How to use
+### How to use
 
 #### Initial setup
 

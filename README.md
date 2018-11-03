@@ -1,8 +1,6 @@
 <a href="https://github.com/letelete/Easy-Issues-Documentation" alt="GitHub release"><img src="https://i.imgur.com/OQUy5Ly.png" /></a>
 <h2 align="center"><b>Easy Issues Documentation</b></h2>
-<h4 align="center">Python script to create a documentation for issues status in repository.</h4>
-<h5>Made for specific task in Google Code-In, so Its functionality is strongly focused on this task.</h5>
-
+<h4 align="center">Python script to create a documentation for issues status in repository. Made for Google Code-In 2018</h4>
 
 ### How does it works
 
